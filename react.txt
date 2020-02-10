@@ -1,0 +1,2 @@
+Objetos literais não podem ser mostrados como texto no jsx.
+Use: objliteral.atributo
