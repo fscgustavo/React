@@ -18,6 +18,7 @@ const App = () =>{
             {/* 
                 for now, use className and htmlFor 
                 to avoid colisions
+                teste
             */}
             <label className="label" htmlFor="name">{labelText} </label>
             <input id="name" type="text"/>
