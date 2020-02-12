@@ -4,20 +4,7 @@ import React from 'react';
 import './SeasonDisplay.css';
 
 class SeasonDisplay extends React.Component{
-    constructor(props){
-        super(props);
-        this.seasonConfig = {
-            summer: {
-                text: `Let's hit the beach!`,
-                iconName: 'sun'
-            },
-            winter: {
-                text: `Burr, it's is chilly`,
-                iconName: 'snowflake'
-            }
-        }
-        
-    }
+    
     
     getSeason(lat,month){
         if(month > 2 && month<9){
@@ -28,10 +15,20 @@ class SeasonDisplay extends React.Component{
     }
 
     render(){
-
         const season = this.getSeason(this.props.lat, new Date().getMonth());
-        const {text, iconName} = this.seasonConfig[season]
-
+        const seasonConfig = {
+            summer: {
+                text: `Let's hit the beach!`,
+                iconName: 'sun'
+            },
+            winter: {
+                text: `Burr, it's is chilly`,
+                iconName: 'snowflake'
+            }
+        }
+        
+        const {text, iconName} = seasonConfig[season]
+        
         return(
             <div className={`season-display ${season}`}>
                 <i className={`icon-left massive ${iconName} icon`}/>
