@@ -16,7 +16,9 @@ class App extends React.Component{
         errorMessage:''
     };
 
-    render(){
+    
+
+    renderContent(){
         if(this.state.errorMessage && !this.state.lat){
             return(
                 <div>
@@ -35,9 +37,16 @@ class App extends React.Component{
             );
         }
 
-        return  <Spinner message="Please accept location request"/>;
-        
-        
+        return  <Spinner message="Please accept location request"/>;     
+    }
+
+    //evite ter múltiplos returns no render
+    render(){
+        return(
+            <div className = "border red">
+                {this.renderContent()}
+            </div>
+        );
     }
 
     //Content visible on the screen
