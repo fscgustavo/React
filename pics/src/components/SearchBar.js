@@ -9,14 +9,14 @@ class SearchBar extends React.Component{
     onFormSubmit = event =>{
         
         event.preventDefault();
-        this.props.onSubmit(this.state.term);
+        this.props.onSubmit(this.state.term);//communicating child to parent
 
         /*
             Sem arrow function:
             console.log(this.state.term) ------> error
             Ways to solve it:
 
-            constructor(){
+            constructor(){ 
                 this.drive = this.drive.bind(this)
             }
 
