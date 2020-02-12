@@ -2,14 +2,30 @@ import React from 'react';
 
 class SearchBar extends React.Component{
     
-    //this name is a community convention 
-    //or handleInputChange
-    onInputChange(event){
-
-    }
-
     state={ term: '' }
 
+    //this name is a community convention 
+    //or handleInputChange
+    onFormSubmit = event =>{
+        
+        event.preventDefault();
+        this.props.onSubmit(this.state.term);
+
+        /*
+            Sem arrow function:
+            console.log(this.state.term) ------> error
+            Ways to solve it:
+
+            constructor(){
+                this.drive = this.drive.bind(this)
+            }
+
+            {event => this.onFormSubmit(event)}
+        */
+
+    }
+        
+    
     /* 
                         
         We do not put on a set of parentheses when ever we pass a callback function
@@ -24,16 +40,17 @@ class SearchBar extends React.Component{
     render(){
         return(
             <div className="ui segment">
-                <form className="ui form">
+                <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
                         <label>Image Search</label>
                         
+                        {/* Controlled Element: */}
                         <input 
                             type="text" 
                             value={this.state.term}
                             onChange={e => this.setState({term: e.target.value})}
                         />
-                        
+
                     </div>
                 </form>
             </div>
