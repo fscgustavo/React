@@ -1,14 +1,15 @@
 import React from 'react';
-import unsplash from '../api/usplash';
+import unsplash from '../api/unsplash';
 import SearchBar from './SearchBar';
+import ImageList from './ImageList';
 
 class App extends React.Component{
     //[] é a maneira de colocar null e não dar erro
     state = { images: [] };
 
     onSearchSubmit = async (term) =>{
-        const response= await unsplay.get('/search/photos',{
-                params:{query: term},s
+        const response= await unsplash.get('/search/photos',{
+                params:{query: term},
                
             })
 
@@ -21,6 +22,7 @@ class App extends React.Component{
             <div className="ui container" style={{marginTop: '10px'}}>
                 <SearchBar onSubmit={this.onSearchSubmit}/>
                 Found: {this.state.images.length} images
+                <ImageList images={this.state.images}/>
             </div>
         );
     }
