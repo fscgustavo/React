@@ -2,11 +2,17 @@ import React from 'react'
 import VideoItem from './VideoItem'
 import { unstable_batchedUpdates } from 'react-dom'
 
-const VideoList = ({videos}) => {
+const VideoList = ({videos, onVideoSelect}) => {
 
     const renderedList = videos.map((video)=>{
         return(
-            <VideoItem video = {video}/>
+            <div className="ui relaxed divided list">
+                <VideoItem 
+                    key={video.id.videoId} 
+                    onVideoSelect={onVideoSelect} 
+                    video = {video}
+                />
+            </div>
         );
     })
 
