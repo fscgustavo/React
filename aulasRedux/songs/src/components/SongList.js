@@ -4,7 +4,7 @@ import {selectSong} from '../actions'
 
 class SongList extends Component{//another way to extends
     renderList(){
-        return this.props.song.map((song)=>{
+        return this.props.songs.map((song)=>{
             return(
                 <div className="item" key={song.title}>
                     <div className="right floated content">
@@ -36,8 +36,12 @@ class SongList extends Component{//another way to extends
 
 //convetion
 const mapStateToProps = (state) => {
-    return {song: state.songs}
+    return {songs: state.songs}
 }
 
 //connect()
+/*
+    the action needs to be dispatched
+    the connect function do it for us
+*/
 export default connect(mapStateToProps,{selectSong})(SongList)
