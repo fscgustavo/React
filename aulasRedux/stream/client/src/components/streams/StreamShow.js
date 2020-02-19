@@ -8,4 +8,4 @@ const StreamShow = () =>{
     )
 }
 
-export default StreamCreate
+export default StreamShow
