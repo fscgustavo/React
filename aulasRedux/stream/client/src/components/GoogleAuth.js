@@ -1,9 +1,9 @@
 import React from 'react'
-import {signIn, signOut} from '../actions/'
+import {connect} from 'react-redux'
+import {signIn, signOut} from '../actions/' //comes as props
 
 class GoogleAuth extends React.Component{
-    state = {isSignedIn: null}
-
+    
     componentDidMount(){
         window.gapi.load('client:auth2', () =>{
             window.gapi.client.init({
@@ -13,7 +13,7 @@ class GoogleAuth extends React.Component{
                 //then is only executed if the instrunction inside
                 //of load is ready
                 this.auth = window.gapi.auth2.getAuthInstance()
-                this.setState({isSignedIn: this.auth.isSignedIn.get()})
+                this.onAuthChange(this.auth.isSignedIn.get())
                 //listen is a method that is executed
                 //when the authentication status is changed
                 this.auth.isSignedIn.listen(this.onAuthChange)
@@ -71,6 +71,6 @@ const mapStateToProps = state =>{
 }
 
 export default connect(
-    null,
+    mapStateToProps,
     {signIn, signOut}
 )(GoogleAuth)
