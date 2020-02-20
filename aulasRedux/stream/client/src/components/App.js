@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Link} from 'react-router-dom'
+import { BrowserRouter, Route} from 'react-router-dom'
 import StreamList from './streams/StreamList'
 import StreamDelete from './streams/StreamDelete'
 import StreamCreate from './streams/StreamCreate'
@@ -9,11 +9,15 @@ import Header from './Header'
 
 
 const App = () => {
+    /*
+        To be able to use Link, Route.. everything
+        has to be a child of BrowserRouter
+    */
     return(
-        <div>
-        <Header/>
+        <div className = "ui container">
             <BrowserRouter>
                 <div>
+                    <Header/>
                     <Route path="/" exact component={StreamList}/>
                     <Route path="/streams/new" exact component={StreamCreate}/>
                     <Route path="/streams/:id" exact component={StreamShow}/>
