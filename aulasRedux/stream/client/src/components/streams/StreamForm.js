@@ -11,7 +11,7 @@ class StreamForm extends React.Component {
       );
     }
   }
-
+  //touched == true quando o elemento é desfocada
   renderInput = ({ input, label, meta }) => {
     const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
     return (
@@ -27,6 +27,7 @@ class StreamForm extends React.Component {
     this.props.onSubmit(formValues);
   };
 
+  //the form needs to have the class "error" for it appears 
   render() {
     return (
       <form
