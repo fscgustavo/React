@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 const Modal = props => {
   return ReactDOM.createPortal(
     <div onClick={props.onDismiss} className="ui dimmer modals visible active">
+    {/* stop propagation doesnt allow you to close the modal when clicked in the wrong place*/}
       <div
         onClick={e => e.stopPropagation()}
         className="ui standard modal visible active"
