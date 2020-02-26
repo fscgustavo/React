@@ -1,11 +1,11 @@
-import _ from lodash
+import _ from 'lodash'
 import { 
     CREATE_STREAM,
     FETCH_STREAMS,
     FETCH_STREAM,
     DELETE_STREAM,
     EDIT_STREAM
-} from './types'
+} from '../actions/types'
 
 export default (state = {}, action) => {
     switch(action.type){
