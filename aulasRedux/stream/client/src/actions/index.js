@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import { SIGN_IN, SIGN_OUT } from './types'
-
-export const signIn = (userId) =>{
-=======
 import streams from '../apis/streams'
 import history from '../history'
 import { 
@@ -16,7 +11,6 @@ import {
 } from './types'
 
 export const signIn = userId =>{
->>>>>>> 1395e3e52c715c5c8f3dbcf13fae1c1a033304ff
     return{
         type: SIGN_IN,
         payload: userId
@@ -25,12 +19,7 @@ export const signIn = userId =>{
 
 export const signOut = (userId) =>{
     return{
-<<<<<<< HEAD
-        type: SIGN_OUT,
-        payload: userId
-=======
         type: SIGN_OUT
->>>>>>> 1395e3e52c715c5c8f3dbcf13fae1c1a033304ff
     }
 }
 
