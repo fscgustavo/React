@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 //Field is a component
 //reduxForm is a function
@@ -52,3 +53,29 @@ onChange={formProps.input.onChange}
 value={formProps.input.value}
 
 */
+=======
+import React from 'react';
+import { connect } from 'react-redux';
+import { createStream } from '../../actions';
+import StreamForm from './StreamForm';
+
+class StreamCreate extends React.Component {
+  onSubmit = formValues => {
+    this.props.createStream(formValues);
+  };
+
+  render() {
+    return (
+      <div>
+        <h3>Create a Stream</h3>
+        <StreamForm onSubmit={this.onSubmit} />
+      </div>
+    );
+  }
+}
+
+export default connect(
+  null,
+  { createStream }
+)(StreamCreate);
+>>>>>>> 1395e3e52c715c5c8f3dbcf13fae1c1a033304ff
