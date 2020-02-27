@@ -10,11 +10,8 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.2.0",
-<<<<<<< HEAD
-=======
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
->>>>>>> 1395e3e52c715c5c8f3dbcf13fae1c1a033304ff
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-form": "^8.3.0"
