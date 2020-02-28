@@ -10,7 +10,7 @@ const App = () => {
     //const {resource} = this.state;
     return (
         <div>
-
+            <UserList/>
             <div>     
                 <button onClick={() => setResource('posts')}>Posts</button>
                 <button onClick={()=> setResource('ToDos')}>ToDos</button>
