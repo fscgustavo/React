@@ -18,7 +18,7 @@ export default (state = {}, action) => {
             return {...state, [action.payload.id]: action.payload}
         case EDIT_STREAM:
             return {...state, [action.payload.id]: action.payload}
-        //to delete, we use the lodash
+        //use lodash to delete
         case DELETE_STREAM:
             return _.omit(state, action.payload)
         default:
